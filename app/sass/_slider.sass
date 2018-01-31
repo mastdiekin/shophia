@@ -1,0 +1,75 @@
+@import src/fastmixins
+
+.slider
+	&__wrapper
+		// height: 700px
+		height: calc(100vh - 100px)
+		min-height: 600px
+	&__item
+		// height: 720px
+		height: calc(100vh - 100px)
+		min-height: 600px
+		background-size: cover
+		span
+			display: block
+			+latob
+			text-transform: uppercase
+			margin-bottom: 15px
+		&-label
+			width: 280px
+			height: 280px
+			+df
+			+cc
+			flex-direction: column
+			flex-wrap: nowrap
+			border: 2px solid $w
+			+pr
+			+unselectable
+			margin-bottom: 55px
+			&:before
+				+c
+				+pa
+				left: 0
+				right: 0
+				top: 0
+				bottom: 0
+				border: 1px solid $w
+				margin: 10px
+				z-index: 0
+			.label__name,
+			.label__upto
+				font-size: 20px
+				color: $w
+			.label__sale
+				font-size: 59px
+				color: $b
+			.label__discount
+				font-size: 31px
+				margin-bottom: 0
+				span.percent
+					display: inline-block
+					font-size: 23px
+
+.slick-dots
+	+pa
+	bottom: 34px
+	left: 0
+	right: 0
+	text-align: center
+	li
+		display: inline-block
+		margin-left: 20px
+		&:first-child
+			margin-left: 0
+		&.slick-active
+			button
+				background: $b
+		button
+			font-size: 0
+			width: 15px
+			height: 15px
+			outline: none
+			cursor: pointer
+			border: 0
+			background: #b2b2b2
+			transform: rotate(45deg)

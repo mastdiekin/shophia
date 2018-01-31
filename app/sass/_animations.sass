@@ -1,0 +1,19 @@
+@import src/fastmixins
+
+@keyframes fade
+	from
+		transform: translate(0, 10px)
+		opacity: 0
+	to
+		transform: translate(0, 0)
+		opacity: 1
+
+.fade
+	animation-name: fade
+	animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955)
+
+.animated
+	-webkit-animation-duration: .8s
+	animation-duration: .8s
+	-webkit-animation-fill-mode: both
+	animation-fill-mode: both

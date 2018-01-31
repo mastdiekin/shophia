@@ -1,0 +1,119 @@
+@import src/fastmixins
+
+.header
+	&__top
+		background: #f2f2f2
+		font-size: 11px
+		padding: 20px 0
+		+r(1152)
+			text-align: center
+	&__phone
+		+r(1152)
+			display: block
+			margin-bottom: 10px
+		&:before
+			content: '\f095'
+			+fa
+			margin-right: 19px
+			+pr
+			top: -1px
+			+r(1152)
+				margin-right: 5px
+				top: 0
+	&__links
+		ul
+			li
+				display: inline-block
+				margin-left: 70px
+				+pr
+				+r(1152)
+					margin-left: 5px
+					margin-bottom: 5px
+				&:before
+					content: '|'
+					+pa
+					left: -35px
+					+r(1152)
+						display: none
+				&:first-child
+					margin-left: 0
+					&:before
+						display: none
+				a
+					text-transform: uppercase
+		&-wrap
+			+r(736)
+				display: block !important
+				text-align: center
+	&__bottom
+		+pr
+		padding: 35px 0
+		&:before
+			+c
+			+arr(390, 60, $bg, b)
+			+pa
+			left: 50%
+			bottom: -60px
+			z-index: 1
+			transform: translate(-50%, 0)
+			+r(390)
+				display: none
+	&__nav
+		+playi
+		font-size: 18px
+		+r(1152)
+			text-align: center
+			margin-bottom: 20px
+		li
+			display: inline-block
+			margin-left: 30px
+			+r(390)
+				margin-bottom: 10px
+			&:first-child
+				margin-left: 0
+	&__logo
+		display: block
+		width: 228px
+		height: 73px
+		background-image: url('../images/header-logo.png')
+		background-repeat: no-repeat
+	&__social
+		float: right
+		+r(1152)
+			display: none
+		li
+			display: inline-block
+			vertical-align: top
+			margin-left: 10px
+			&:first-child
+				margin-left: 0
+			a
+				+df
+				+cc
+				width: 35px
+				height: 35px
+				border: 2px solid $main
+				border-radius: 90%
+				transition: border-color $t
+				&:hover
+					border-color: $b
+					&:before
+						color: $b
+				&:before
+					+fa
+					color: $main
+					transition: color $t
+				&.facebook
+					&:before
+						content: '\f09a'
+						+pr
+						left: -1px
+				&.twitter
+					&:before
+						content: '\f099'
+				&.pinterest
+					&:before
+						content: '\f0d2'
+				&.instagram
+					&:before
+						content: '\f16d'

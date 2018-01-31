@@ -1,0 +1,123 @@
+@import src/fastmixins
+
+.support
+	&__wrapper
+		+df
+		justify-content: space-between
+		+r(922)
+			display: block
+	&__item
+		height: 100px
+		width: 28.7%
+		color: $w
+		+pr
+		background: $main
+		+r(922)
+			width: 100% !important
+			padding: 0 !important
+			+df
+			+cc
+			flex-direction: column
+			transition: none !important
+			&:hover
+				transform: none !important
+		&:before
+			+c
+			+pa
+			top: 0
+		&:nth-of-type(1),
+		&:nth-of-type(3)
+			z-index: 1
+			transition: transform .2s linear
+			&:hover
+				transform: scale(1.2)
+				z-index: 2
+		&:nth-of-type(1),
+		&:nth-of-type(2),
+		&:nth-of-type(3)
+			&:before
+				right: -40px
+				+arr(40, 100, $main, r)
+				+r(922)
+					display: none
+		&:nth-of-type(1)
+			padding: 25px 0 0 80px
+			&:hover
+				&:before
+					right: -39px
+			+r(1152)
+				padding: 30px 0 0 80px
+			.support__icon
+				top: 4px
+				left: -50px
+		&:nth-of-type(3)
+			padding: 25px 0 0 100px
+			&:hover
+				&:before
+					left: -39px
+			+r(1152)
+				padding: 30px 0 0 70px
+				.support__icon
+					left: -60px
+					top: -2px
+			&:before
+				right: auto
+				left: -40px
+				transform: rotate(-180deg)
+			.support__icon
+				top: 4px
+				left: -70px
+		&:nth-of-type(2)
+			background: $b
+			padding: 25px 0 0 140px
+			width: 40%
+			transition: transform .2s linear
+			&:hover
+				transform: scale(1.2)
+				&:before
+					left: -2px
+				&:after
+					right: -2px
+			+r(1360)
+				padding: 30px 0 0 140px
+				.support__icon
+					top: -2px
+			+r(1152)
+				padding: 30px 0 0 110px
+			&:before
+				left: 0
+				border-color: transparent transparent transparent $bg
+			&:after
+				+pa
+				+c
+				top: 0
+				right: 0
+				+arr(40, 100, $bg, l)
+				+r(922)
+					display: none
+			.support__icon
+				top: 5px
+				left: -60px
+	&__icon
+		+pa
+		left: -50px
+		top: 0
+		i
+			font-size: 48px
+		+r(350)
+			i
+				display: none
+	&__name
+		+pr
+		font-size: 30px
+		+latob
+		text-transform: uppercase
+		+r(1360)
+			font-size: 20px
+	&__description
+		font-size: 14px
+		+lato
+	&__name,
+	&__description
+		z-index: 1
+		+pr

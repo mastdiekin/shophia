@@ -1,0 +1,133 @@
+@import src/fastmixins
+
+.featured
+	&__item
+		min-height: 400px
+		margin-bottom: 10px
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		+pr
+		overflow: hidden
+		&:hover
+			&:before
+				background: rgba($b, .24)
+				border-color: transparent
+				transition: background .2s ease, border-color .2s linear
+			.featured__btn
+				opacity: 1
+				visibility: visible
+			.featured__add
+				opacity: 1
+				visibility: visible
+				transform: translate(-50%, -50%)
+			.featured__text
+				opacity: 0
+				visibility: hidden
+				&.top
+					transform: translate(-50%, -10px)
+				&.left
+					transform: translate(0, -10px)
+				&.center
+					transform: translate(-50%, calc(-50% - 10px))
+		&:before
+			+c
+			+pa
+			left: 15px
+			right: 15px
+			top: 15px
+			bottom: 15px
+			border: 2px solid $w
+			transition: background .2s ease, border-color .2s linear
+			border-radius: 2px
+		&.full
+			height: calc(100% - 10px)
+	&__center
+		height: 100%
+	&__add
+		+pa
+		width: 100px
+		height: 100px
+		top: 50%
+		left: 50%
+		transform: translate(-50%, calc(-50% + 10px))
+		transition: opacity .2s ease, visibility .2s ease, transform .3s linear
+		visibility: hidden
+		opacity: 0
+		&:hover
+			&:before,
+			&:after
+				background: $w
+		&:before,
+		&:after
+			+c
+			+pa
+			width: 70px
+			height: 2px
+			background: $main
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			transition: background .2s ease
+		&:after
+			transform: translate(-50%, -50%) rotate(-90deg)
+	&__btn
+		+pa
+		z-index: 1
+		left: 50%
+		transform: translate(-50%, 0)
+		bottom: 65px
+		font-size: 15px
+		min-width: 108px
+		visibility: hidden
+		opacity: 0
+		transition: opacity .2s ease, visibility .2s ease, color $t
+	&__text
+		+pa
+		+unselectable
+		transition: opacity .2s ease, visibility .2s ease, transform .1s linear
+		span
+			display: block
+			text-align: center
+		&.top
+			left: 50%
+			top: 65px
+			transform: translate(-50%, 0)
+			span
+				&.discount,
+				&.name
+					+latob
+					text-transform: uppercase
+				&.discount
+					font-size: 24px
+					margin-bottom: 10px
+				&.name
+					font-size: 14px
+		&.left
+			top: 10vw
+			left: 10%
+			right: 10%
+			span
+				text-align: left
+				&.name
+					font-size: 24px
+					+playi
+					font-weight: bold
+					margin-bottom: 20px
+				&.category
+					text-transform: uppercase
+					color: $w
+					+latob
+					font-size: 36px
+		&.center
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			span
+				+latob
+				text-transform: uppercase
+				&.discount
+					font-size: 48px
+					line-height: 35px
+					&__off
+						font-size: 60px

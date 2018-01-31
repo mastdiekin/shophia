@@ -1,0 +1,70 @@
+@import src/fastmixins
+
+.testimonial
+	&__wrapper
+		background: $main
+		+pr
+		padding: 40px 0
+		&:before
+			+c
+			+pa
+			+arr(365, 34, $bg, b)
+			left: 50%
+			top: 0
+			z-index: 1
+			transform: translate(-50%, 0)
+			+r(365)
+				display: none
+	&__item
+		+r(550)
+			margin-bottom: 50px
+		&-right,
+		&-left
+			+df
+			justify-content: space-between
+			height: 100%
+			+r(550)
+				display: block
+				height: auto
+				text-align: center
+		&-right
+			text-align: right
+	&__text,
+	&__photo
+		display: inline-block
+	&__photo
+		height: 100%
+		+df
+		align-items: flex-end
+		width: calc(45% - 10px)
+		+r(550)
+			width: 100%
+			display: block
+		img
+			display: block
+			width: auto
+			max-width: 100%
+			+r(550)
+				margin: 0 auto
+	&__text
+		width: calc(55% - 10px)
+		+r(550)
+			width: 100%
+			display: block
+	&__description
+		color: white
+		+playi
+		font-size: 18px
+		line-height: 30px
+		margin-bottom: 30px
+	&__name
+		color: black
+		font-size: 30px
+		+playi
+		font-weight: 700
+		line-height: 40px
+	&__position
+		color: rgb(127, 126, 126)
+		+latob
+		font-size: 14px
+		line-height: 30px

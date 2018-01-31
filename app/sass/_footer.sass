@@ -1,0 +1,181 @@
+@import src/fastmixins
+
+.footer
+	background: $footer-bg
+	color: #363636
+	padding: 70px 0 110px
+	+pr
+	&:after
+		+c
+		+pa
+		height: 40px
+		width: 100%
+		background: $b
+		bottom: 0
+	a
+		color: #737373
+		&:hover
+			color: $main
+	&__title
+		color: $w
+		font-size: 16px
+		text-transform: uppercase
+		+latob
+		margin-bottom: $footer-title-gap
+		display: block
+		span
+			+playi
+			font-size: 10px
+			display: inline-block
+			padding: 0 3px
+		+r(922)
+			margin-bottom: $footer-title-gap/2
+		+r(736)
+			text-align: center
+	&__nav
+		ul
+			+r(922)
+				margin-bottom: $footer-title-gap/2
+			+r(736)
+				text-align: center
+			li
+				a
+					+lh(30, 14)
+	&__social
+		+clr
+		margin-bottom: 52px
+		+r(736)
+			+df
+			+cg
+		li
+			float: left
+			margin-left: 16px
+			&:first-child
+				margin-left: 0
+			a
+				+df
+				+cc
+				+sq(50)
+				background: $w
+				transition: background $t
+				&:hover
+					background: $main
+				+r(350)
+					+sq(30)
+					&:before
+						font-size: 15px
+				&:before
+					+c
+					+fa
+					color: $b
+					font-size: 24px
+				&.facebook
+					&:before
+						content: '\f09a'
+				&.twitter
+					&:before
+						content: '\f099'
+				&.instagram
+					&:before
+						content: '\f16d'
+				&.pinterest
+					&:before
+						content: '\f0d2'
+				&.rss
+					&:before
+						content: '\f09e'
+	&__form
+		&-wrapper
+			padding: 3px
+			border: 1px solid #484848
+			display: inline-block
+			+r(736)
+				+pr
+				left: 50%
+				transform: translate(-50%, 0)
+	&__email,
+	&__submit
+		border: 0
+		background-color: transparent
+		outline: none
+		height: 33px
+		line-height: 33px
+		display: inline-block
+		+r(400)
+			display: block
+			width: 100% !important
+	&__email
+		color: lighten(#535353, 40%)
+		padding: 0 20px
+		min-width: 250px
+		+lato
+		+r(736)
+			text-align: center
+		&:focus
+			+placeholder
+				opacity: 0
+				visibility: hidden
+		+placeholder
+			opacity: 1
+			visibility: visible
+			transition: opacity $t, visibility $t
+			color: #535353
+	&__submit
+		cursor: pointer
+		background: #323030
+		color: $w
+		text-transform: uppercase
+		text-align: center
+		min-width: 100px
+		transition: background $t, color $t
+		+lato
+		&:hover
+			background: $main
+			color: $b
+	&__top
+		margin-bottom: 80px
+	&__bottom
+		+pr
+		padding: 40px 0 0
+		p
+			margin: 0
+		&:before
+			+c
+			+pa
+			top: 5px
+			left: 0
+			right: 0
+			height: 1px
+			background: #363636
+		&:after
+			+c
+			+pa
+			left: 50%
+			top: 5px
+			transform: translate(-50%, 0)
+			+arr(24, 9, #363636, b)
+	&__copyright
+		font-size: 11px
+		+lato
+		+lh(18, 11)
+		margin-bottom: 33px
+		+r(736)
+			text-align: center
+	&__cards
+		+clr
+		+r(736)
+			+df
+			+cg
+		li
+			float: left
+			margin-left: 21px
+			&:first-child
+				margin-left: 0
+			&.visa
+				+sprite($visa)
+			&.mastercard
+				+sprite($mastercard)
+			&.americanexpress
+				+sprite($americanexpress)
+			&.discover
+				+sprite($discover)

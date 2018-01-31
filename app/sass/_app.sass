@@ -1,0 +1,114 @@
+@import src/fastmixins
+
+ul
+	padding: 0
+	margin: 0
+
+a
+	color: $b
+	text-decoration: none
+	transition: color $t
+	&:hover, &.is-active, &:active
+		color: $main
+
+html,
+body
+	+selection
+		background: shade($main, 10%)
+		color: $w
+
+body
+	overflow-x: hidden
+
+img
+	width: 100%
+
+.h-100
+	height: 100% !important
+
+.btn
+	background: $btn
+	color: $w
+	+latob
+	text-transform: uppercase
+	font-size: 24px
+	text-align: center
+	line-height: 0
+	padding: 25px
+	transition: color $t
+	&:hover
+		color: $b
+	&__inline
+		display: inline-block
+		min-width: 190px
+
+.section
+	padding: $section-gap 0 0
+	+r(922)
+		padding: $section-gap/2 0 0
+
+.main__title
+	font-size: $main-title
+	text-align: center
+	+playi
+	+pr
+	margin: 0
+	margin-bottom: $section-gap
+	+r(922)
+		margin-bottom: $section-gap/2
+	&:before
+		+c
+		+pa
+		top: 50%
+		left: 0
+		right: 0
+		height: 1px
+		background: #eaeaea
+	span
+		display: inline-block
+		background: $bg
+		+pr
+		z-index: 1
+		padding: 0 9vw
+		&:before,
+		&:after
+			+c
+			+pr
+			display: inline-block
+			width: 18px
+			height: 18px
+			background: $main
+			transform: rotate(45deg)
+			+r(350)
+				display: none
+		&:after
+			left: 2vw
+		&:before
+			right: 2vw
+
+.goup
+	+qd(40)
+	border-radius: 3px
+	background: $b
+	+df
+	+cc
+	+pf
+	bottom: 70px
+	right: 75px
+	opacity: 0
+	visibility: hidden
+	transition: opacity .2s linear, visibility .2s linear
+	+r(922)
+		+qd(30)
+		right: 10px
+		bottom: 10px
+		&:before
+			font-size: 20px
+	&.is-active
+		opacity: 1
+		visibility: visible
+	&:before
+		content: '\f106'
+		+fa
+		color: $w
+		font-size: 30px

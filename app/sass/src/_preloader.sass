@@ -1,0 +1,51 @@
+@keyframes rotate
+	from
+		transform: rotate(0deg)
+	to
+		transform: rotate(359deg)
+
+html.js
+	.loader
+		background: none repeat scroll 0 0 $bg
+		bottom: 0
+		height: 100%
+		left: 0
+		+pf
+		right: 0
+		top: 0
+		width: 100%
+		z-index: 9999
+	.loader_inner 
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		+pa
+
+.rotate
+	animation-name: rotate
+
+.spinner
+	+df
+	+cc
+	width: 60px
+	height: 60px
+	span
+		display: block
+		border: 3px solid $main
+		+pa
+		+sq(30)
+		animation: rotate 3s linear infinite
+		span
+			+sq(40)
+			animation: rotate 2s linear infinite reverse
+		&:before
+			+c
+			+pa
+			top: -3px
+			right: 10px
+			width: 5px
+			height: 4px
+			background: $bg

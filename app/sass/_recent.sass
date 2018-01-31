@@ -1,0 +1,82 @@
+@import src/fastmixins
+
+.recent
+	&__wrapper
+		border: 1px solid #eaeaea
+	&__item
+		height: 350px
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		margin: 10px
+		+pr
+		+r(736)
+			background-position: 50% 0
+		&:before
+			+c
+			+pa
+			left: 0
+			right: 0
+			bottom: 0
+			top: 0
+			background: rgba($b, .55)
+			opacity: 0
+			visibility: hidden
+			transition: opacity .2s linear, visibility .2s linear
+		&:hover
+			&:before
+				opacity: 1
+				visibility: visible
+				transition: opacity .2s linear, visibility .2s linear
+	&__label
+		+pa
+		top: 16px
+		left: 16px
+		+sq(65)
+		background: $label
+		+df
+		+cc
+		color: $w
+		font-size: 22.5px
+		+latob
+		+unselectable
+		span
+			font-size: 11px
+			+pr
+			margin-left: 2px
+			top: -3px
+	&__button
+		+pa
+		left: 50%
+		bottom: 0
+		transform: translate(-50%, 0)
+		min-width: 115px
+		min-height: 40px
+		line-height: 35px
+		background: $b
+		color: $w
+		text-transform: uppercase
+		border: 0
+		cursor: pointer
+		outline: none
+		transition: background $t
+		overflow: visible
+		&:hover
+			background: $btn
+			&:after,
+			&:before
+				border-color: transparent transparent transparent $btn
+		&:before,
+		&:after
+			+c
+			+pa
+			+arr(40, 40, $b, bl)
+			right: -39px
+			top: 0
+			transition: border-color $t
+			+r(320)
+				display: none
+		&:after
+			transform: rotate(-90deg)
+			right: auto
+			left: -39px
